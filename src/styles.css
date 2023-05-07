@@ -1,0 +1,19 @@
+.weather-app {
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 700px;
+}
+li {
+  list-style: none;
+}
+.tempDisplay {
+  font-size: 40px;
+}
+sup {
+  font-size: 22px;
+}
+.tempType {
+  font-size: 24px;
+}

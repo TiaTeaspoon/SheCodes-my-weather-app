@@ -17,3 +17,9 @@ sup {
 .tempType {
   font-size: 24px;
 }
+.footer {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: bold;
+}

@@ -30,6 +30,7 @@ sup {
 }
 #city-value {
   font-size: 36px;
+  margin-top: 10px;
 }
 #description {
   text-transform: capitalize;

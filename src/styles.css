@@ -15,7 +15,7 @@ sup {
   padding: 10px;
   margin: 10px auto;
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 750px;
   background-color: #e0f2f1;
 }
 .tempType {
@@ -30,4 +30,7 @@ sup {
 }
 #city-value {
   font-size: 36px;
+}
+#description {
+  text-transform: capitalize;
 }

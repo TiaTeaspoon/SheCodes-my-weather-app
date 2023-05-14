@@ -22,12 +22,6 @@ function updateCity(event) {
 }
 document.querySelector("form").addEventListener("submit", updateCity);
 
-function displayTemperature(response) {
-  console.log(response);
-  let tempOutput = document.querySelector(".tempDisplay");
-  tempOutput.innerHTML = Math.round(response.data.main.temp);
-}
-
 function getWeather(city) {
   let units = "imperial";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
@@ -36,5 +30,15 @@ function getWeather(city) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
-
+function displayTemperature(response) {
+  console.log(response);
+  let tempOutput = document.querySelector(".tempDisplay");
+  let descriptionOutput = document.querySelector("#description");
+  let humidityOutput = document.querySelector("#humidity");
+  let windOutput = document.querySelector("#wind");
+  tempOutput.innerHTML = Math.round(response.data.main.temp);
+  descriptionOutput.innerHTML = response.data.weather[0].description;
+  humidityOutput.innerHTML = response.data.main.humidity;
+  windOutput.innerHTML = Math.round(response.data.wind.speed);
+}
 getWeather("Scottsdale");

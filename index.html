@@ -18,7 +18,6 @@
   <body>
     <div class="container">
       <div class="weather-app">
-
           <form>
             <input
           type="text"
@@ -31,15 +30,22 @@
       </form>
       <span>Tuesday 16:00</span>
      <div class="row">
-      <div class="col-4" id="city-value">   
+      <div class="col-3" id="city-value">   
         Scottsdale
     </div>
-     <div class="col-4">   
+     <div class="col-3">   
         <span class="tempDisplay">27</span><sup><span class="tempType">°F | <a href="#">°C</a></span></sup>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Sunny icon"/>
       </div>
+      <div class="col-3">
+        <ul>
+          <li id="description"></li>
+        <li>Humidity: <span id="humidity"></span>%</li>
+        <li>Wind: <span id="wind"></span>mph</li>
+        </ul>
+    </div>
     </div>
     <div class="row">
         <div class="col-2">

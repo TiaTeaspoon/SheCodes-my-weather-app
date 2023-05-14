@@ -27,11 +27,9 @@ function getWeather(city) {
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiKey = "8944afa6845bd7c413a687258d3211ef";
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
 function displayTemperature(response) {
-  console.log(response);
   let tempOutput = document.querySelector(".tempDisplay");
   let descriptionOutput = document.querySelector("#description");
   let humidityOutput = document.querySelector("#humidity");

@@ -18,15 +18,26 @@
   <body>
     <div class="container">
       <div class="weather-app">
-          <form>
+          <form class="mb-1">
+            <div class="row">
+              <div class="col-8">
             <input
-          type="text"
-          id="search-box"
+          type="search"
           autofocus
-          placeholder="Enter a city"
+          placeholder="Type a city"
           autocomplete="off"
+          class="form-control"
+          id="search-box"
         />
-        <input type="submit" value="Search" />
+        </div>
+        <div class="col-4">
+        <input 
+        type="submit" 
+        value="Search"
+        class="btn btn-primary w-50" 
+        />
+        </div>
+        </div>
       </form>
       Last updated: <span>Tuesday 16:00</span>
      <div class="row">

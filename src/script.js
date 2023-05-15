@@ -30,13 +30,20 @@ function getWeather(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 function displayTemperature(response) {
+  console.log(response.data);
   let tempOutput = document.querySelector(".tempDisplay");
   let descriptionOutput = document.querySelector("#description");
   let humidityOutput = document.querySelector("#humidity");
   let windOutput = document.querySelector("#wind");
+  let iconOutput = document.querySelector("#icon");
   tempOutput.innerHTML = Math.round(response.data.main.temp);
   descriptionOutput.innerHTML = response.data.weather[0].description;
   humidityOutput.innerHTML = response.data.main.humidity;
   windOutput.innerHTML = Math.round(response.data.wind.speed);
+  iconOutput.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconOutput.setAttribute("alt", response.data.weather[0].description);
 }
 getWeather("Scottsdale");

@@ -18,6 +18,13 @@ sup {
   max-width: 850px;
   background-color: #d7ccc8;
 }
+.weather-app .active {
+  color: black;
+  cursor: default;
+}
+.weather-app .active:hover {
+  text-decoration: none;
+}
 .tempType {
   font-size: 24px;
   text-decoration: none;

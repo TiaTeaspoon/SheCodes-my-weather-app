@@ -36,6 +36,7 @@ function displayTemperature(response) {
   let humidityOutput = document.querySelector("#humidity");
   let windOutput = document.querySelector("#wind");
   let iconOutput = document.querySelector("#icon");
+  farenheitTemperature = response.data.main.temp;
   tempOutput.innerHTML = Math.round(response.data.main.temp);
   descriptionOutput.innerHTML = response.data.weather[0].description;
   humidityOutput.innerHTML = response.data.main.humidity;
@@ -46,4 +47,29 @@ function displayTemperature(response) {
   );
   iconOutput.setAttribute("alt", response.data.weather[0].description);
 }
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempDisplay");
+  farenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemperature = ((farenheitTemperature - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFarenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempDisplay");
+  farenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+let farenheitTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
 getWeather("Scottsdale");

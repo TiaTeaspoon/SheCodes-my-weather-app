@@ -10,7 +10,10 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/adc3e922a5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/adc3e922a5.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather App</title>
@@ -18,68 +21,61 @@
   <body>
     <div class="container">
       <div class="weather-app">
-          <form class="mb-1">
-            <div class="row">
-              <div class="col-8">
-            <input
-          type="search"
-          autofocus
-          placeholder="Type a city"
-          autocomplete="off"
-          class="form-control"
-          id="search-box"
-        />
-        </div>
-        <div class="col-4">
-        <input 
-        type="submit" 
-        value="Search"
-        class="btn btn-primary w-50" 
-        />
-        </div>
-        </div>
-      </form>
-      Last updated: <span>Tuesday 16:00</span>
-     <div class="row">
-      <div class="col-3" id="city-value">   
-        Scottsdale
-    </div>
-     <div class="col-3">   
-        <span class="tempDisplay">27</span><sup><span class="tempType"><a href="#" id="farenheit-link" class="active">°F</a> | <a href="#" id="celsius-link">°C</a></span></sup>
-    </div>
-    <div class="col-3">
-        <img src="" alt="Sunny icon" id="icon"/>
-      </div>
-      <div class="col-3">
-        <ul>
-          <li id="description"></li>
-        <li>Humidity: <span id="humidity"></span>%</li>
-        <li>Wind: <span id="wind"></span>mph</li>
-        </ul>
-    </div>
-    </div>
-    <div class="weather-forecast">
-    <div class="row">
-        <div class="col-2">
-          <ul> 
-          <li class="weather-forecast-date">Thu</li>
-          <li>
-          <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="" width="40">
-          </li>
-          <li class="weather-forecast-temp-max">98°</li>
-             <li class="weather-forecast-temp-min">67°F</li>
-          </ul> 
-        </div>
+        <form class="mb-1">
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="search"
+                autofocus
+                placeholder="Type a city"
+                autocomplete="off"
+                class="form-control"
+                id="search-box"
+              />
             </div>
-                </div>
-                    </div>
-                  </div>
+            <div class="col-4">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-50"
+              />
+            </div>
+          </div>
+        </form>
+        Last updated: <span>Tuesday 16:00</span>
+        <div class="row">
+          <div class="col-3" id="city-value">Scottsdale</div>
+          <div class="col-3">
+            <span class="tempDisplay">27</span
+            ><sup
+              ><span class="tempType"
+                ><a href="#" id="farenheit-link" class="active">°F</a> |
+                <a href="#" id="celsius-link">°C</a></span
+              ></sup
+            >
+          </div>
+          <div class="col-3">
+            <img src="" alt="Sunny icon" id="icon" />
+          </div>
+          <div class="col-3">
+            <ul>
+              <li id="description"></li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>mph</li>
+            </ul>
+          </div>
+        </div>
+        <div class="weather-forecast" id="forecast"></div>
+      </div>
     </div>
-    </div>
-    </div>
-    </div>  
-    <span class="footer"><a href="https://github.com/TiaTeaspoon/SheCodes-my-weather-app" target="_blank">Open-source code</a> by Tiarra Campbell</span>
-    <script src="src/script.js">
-    </script>
+    <span class="footer"
+      ><a
+        href="https://github.com/TiaTeaspoon/SheCodes-my-weather-app"
+        target="_blank"
+        >Open-source code</a
+      >
+      by Tiarra Campbell</span
+    >
+    <script src="src/script.js"></script>
   </body>
 </html>

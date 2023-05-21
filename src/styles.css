@@ -35,6 +35,22 @@ sup {
   display: block;
   font-weight: bold;
 }
+.weather-forecast div.row ul {
+  margin-top: 25px;
+  text-align: center;
+  padding: 0;
+}
+.weather-forecast-date {
+  font-size: 18px;
+  opacity: 0.7;
+}
+.weather-forecast-temp-max {
+  font-size: 15px;
+}
+.weather-forecast-temp-min {
+  font-size: 15px;
+  opacity: 0.7;
+}
 #city-value {
   font-size: 36px;
   margin-top: 10px;

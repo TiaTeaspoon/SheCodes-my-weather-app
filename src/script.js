@@ -30,7 +30,8 @@ function getWeather(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastOutput = document.querySelector("#forecast");
 
   let days = ["Sat", "Sun", "Mon", "Tue"];
@@ -55,6 +56,14 @@ function displayForecast() {
   forecastOutput.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8944afa6845bd7c413a687258d3211ef";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let tempOutput = document.querySelector(".tempDisplay");
@@ -72,6 +81,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconOutput.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 function displayCelsiusTemperature(event) {
   event.preventDefault();
@@ -99,4 +110,3 @@ let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemperature);
 
 getWeather("Scottsdale");
-displayForecast();

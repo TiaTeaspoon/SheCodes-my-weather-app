@@ -16,6 +16,7 @@ sup {
 }
 .weatherDetails {
   padding-left: 0px;
+  padding: 0px;
 }
 .weather-app {
   color: #393e41;

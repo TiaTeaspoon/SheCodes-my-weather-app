@@ -21,7 +21,6 @@ function updateCity(event) {
   getWeather(replacementCity.value);
 }
 document.querySelector("form").addEventListener("submit", updateCity);
-
 function getWeather(city) {
   let units = "imperial";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
@@ -29,19 +28,15 @@ function getWeather(city) {
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
-
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastOutput = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -70,17 +65,12 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastOutput.innerHTML = forecastHTML;
 }
-
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "8944afa6845bd7c413a687258d3211ef";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-
 function displayTemperature(response) {
-  console.log(response.data);
   let tempOutput = document.querySelector(".tempDisplay");
   let descriptionOutput = document.querySelector("#description");
   let humidityOutput = document.querySelector("#humidity");
@@ -96,7 +86,6 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconOutput.setAttribute("alt", response.data.weather[0].description);
-
   getForecast(response.data.coord);
 }
 function displayCelsiusTemperature(event) {
@@ -107,7 +96,6 @@ function displayCelsiusTemperature(event) {
   let celsiusTemperature = ((farenheitTemperature - 32) * 5) / 9;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 function displayFarenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".tempDisplay");
@@ -115,13 +103,9 @@ function displayFarenheitTemperature(event) {
   celsiusLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
-
 let farenheitTemperature = null;
-
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemperature);
-
 getWeather("Scottsdale");

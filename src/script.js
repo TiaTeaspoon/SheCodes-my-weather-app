@@ -10,9 +10,12 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-let hours = ("0" + now.getHours()).slice(-2);
-let minutes = ("0" + now.getMinutes()).slice(-2);
-span.innerHTML = `${day} ${hours}:${minutes}`;
+let tOptions = {
+  hour12: true,
+  hour: "numeric",
+  minute: "2-digit",
+};
+span.innerHTML = `${day} ${now.toLocaleTimeString("en-us", tOptions)}`;
 function updateCity(event) {
   event.preventDefault();
   let target = document.querySelector("#city-value");
